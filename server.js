@@ -20,9 +20,9 @@ app.get('/' ,(req, res)=>{
    return  res.render('index');
 })
 
-app.get('/home' ,(req, res)=>{
-  return  res.render('./home');
-})
+// app.get('/home' ,(req, res)=>{
+//   return  res.render('./home');
+// })
 
 
 

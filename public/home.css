@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+body{
+    
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url(/images/medium-shot-people-working-laptops.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-repeat: inherit;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+
+#landing{
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-template-rows: repeat(12, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px; 
+}
+
+.header{
+    grid-area: 2 / 2 / 6 / 9;
+    color: aliceblue;
+}
+
+.header h1{
+    font-family: "Itim";
+    font-weight: 700;
+    font-size: 5em;
+    text-shadow:black 6px;
+    color: rgb(172, 0, 0);
+}
+
+.pageBtn{
+    grid-area: 7 / 2 / 9 / 9;
+}
+.pageBtn button{
+    padding: 10px 70px;
+ }
+
+.lowrSection{
+    display: flex;
+    gap: 25px;
+    grid-area: 10 / 3 / 13 / 11;
+    color: aliceblue;
+}
+
+/* 
+#studentForm{
+    
+    background-color: #9CAB82;
+    padding:0% 15%;
+    
+    
+    }
+    #studentForm img{
+    
+    height:25% ;
+    margin: 5% 20%;
+        
+    }
+        
+    #studentForm input{
+    
+        background: none;
+        border: solid rgb(24, 2, 96) 3px;
+    }
+    
+    #studentForm button{
+    
+        margin-top: 20%;
+        color: #FFF;
+        background-color: #596947;
+    }
+     */
+

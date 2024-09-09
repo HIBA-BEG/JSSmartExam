@@ -72,36 +72,52 @@ body{
     background-color: #596947;
 }
 
-#trainerForm{
+
+
+#trainerLogin{
     
 background-color: #9CAB82;
 padding:0% 15%;
 
 
 }
-#trainerForm img{
+#trainerLogin img{
 
 height:25% ;
 margin: 5% 20%;
+margin-top: 20%;
+filter: drop-shadow(0 0 0.75rem rgb(21, 18, 19));
     
 }
     
-#trainerForm input{
+#trainerLogin input{
 
     background: none;
     border: solid rgb(24, 2, 96) 3px;
 }
 
-#trainerForm button{
+#trainerLogin button{
 
     margin-top: 20%;
-    color: #FFF;
     background-color: #596947;
 }
 
 
 
 
+#trainerCard{
+background-color: #9CAB82;
+padding:0% 15%;
+}
 
+#trainerCard img{
 
-  
+    height:50% ;
+    margin: 5% 20%;
+    margin-top: 20%;
+        
+}
+#trainerCard button{
+    margin: 20% 0%;
+    background-color: #596947;
+}
