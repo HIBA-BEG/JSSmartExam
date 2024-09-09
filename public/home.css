@@ -50,12 +50,15 @@ grid-row-gap: 0px;
     grid-area: 7 / 2 / 9 / 9;
 }
 .pageBtn button{
-    padding: 10px 70px;
+    padding: 10px 90px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: large;
  }
 
 .lowrSection{
     display: flex;
-    gap: 25px;
+    gap: 10%;
     grid-area: 10 / 3 / 13 / 11;
     color: aliceblue;
 }

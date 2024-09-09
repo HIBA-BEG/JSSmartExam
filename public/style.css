@@ -30,7 +30,9 @@ body{
     background-color: rgb(23, 72, 72);
 }
 
-  
+#TrinerForm{
+    display: none;
+}
 #tForm{
 
     background-color: #CEDEBD;
