@@ -22,6 +22,7 @@ body::before {
     background-repeat: inherit;
     filter: blur(4px);
     z-index: -1;
+    filter: brightness(50%);
 }
 
 
@@ -42,8 +43,24 @@ grid-row-gap: 0px;
     font-family: "Itim";
     font-weight: 700;
     font-size: 5em;
-    text-shadow:black 6px;
-    color: rgb(172, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.header p{
+    font-family: "Itim";
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+
+.material-symbols-outlined{
+ 
+margin-right: 10px;
+font-variation-settings:
+'FILL' 0,
+'wght' 400,
+'GRAD' 0,
+'opsz' 24
+
 }
 
 .pageBtn{
@@ -54,6 +71,9 @@ grid-row-gap: 0px;
     border-radius: 8px;
     font-weight: 700;
     font-size: large;
+    margin-left: 5%;
+    background-color: #9EB384;
+    color: #fff;
  }
 
 .lowrSection{
