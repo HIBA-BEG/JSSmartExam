@@ -29,6 +29,9 @@ app.get('/trainer/layout' ,(req, res)=>{
 app.get('/trainer/dashboard' ,(req, res)=>{
   return  res.render('trainer/dashboard');
 })
+app.get('/trainer/manage-quiz' ,(req, res)=>{
+  return  res.render('trainer/manageQuiz');
+})
 
 app.get('/AllStudents' ,(req, res)=>{
    return  res.render('trainer/crudStudents');
