@@ -20,6 +20,18 @@ app.get('/' ,(req, res)=>{
    return  res.render('index');
 })
 
+
+// ==========================trainer routes ===========================
+
+app.get('/trainer/layout' ,(req, res)=>{
+  return  res.render('trainer/layout');
+})
+app.get('/trainer/dashboard' ,(req, res)=>{
+  return  res.render('trainer/dashboard');
+})
+
+//=====================================================================
+
 // app.get('/home' ,(req, res)=>{
 //   return  res.render('./home');
 // })
