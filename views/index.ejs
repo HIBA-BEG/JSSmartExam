@@ -6,11 +6,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/home.css"></head>
-    <link rel="stylesheet" href="css/style.css"></head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <body>
     
- <section id="landing">
 
+
+
+<%- include('partials/TrainerCard.ejs')%>
+<%- include('partials/TrainerLogin.ejs')%>
+<%- include('partials/TrainerForm.ejs')%>
+<%- include('partials/StudentLogin.ejs')%>
+
+
+
+
+ <section id="landing">
     <header class="header">
         <h1>A Great Place For Learning</h1>
         <p>Lorem ipsum dolorcorrupti inventore ex expedita veniam nisi
@@ -18,32 +28,80 @@
     </header>
 
     <div class="pageBtn">
-        <button class="mr-5">Student</button>
-        <button class="ml-5">Trainer</button>
+        <button class="mr-5" onclick="showPopup('StudentLoginCard')">Student</button>
+        <button class="ml-5 bg-white text-dark" onclick="showPopup('trainerPopup')">Trainer</button>
     </div>
 
     <div class="lowrSection">
         <div>
-            <h4>Lorem ipsum dolor</h4>
+            <h4>
+                <span class="material-symbols-outlined">
+                    laptop_chromebook
+                    </span>Lorem ipsum dolor</h4>
             <p>Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Maxime numquam possimus,</p>
         </div>
 
         <div>
-            <h4>Lorem ipsum dolor</h4>
+            <h4>
+            <span class="material-symbols-outlined">groups</span>
+            Lorem ipsum dolor</h4>
             <p>Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Maxime numquam possimus,</p>
         </div>
 
         <div>
-            <h4>Lorem ipsum dolor</h4>
+            <h4>
+            <span class="material-symbols-outlined">library_books</span>Lorem ipsum dolor</h4>
             <p>Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Maxime numquam possimus,</p>
         </div>
     </div>
-</section>  
-<script>
 
-</script> 
+
+    <script>
+        function showPopup(popID) {
+          document.getElementById(popID).style.display = "block";
+          createOverlay(popID);
+        }
+      
+        function hidePopup(popID) {
+          document.getElementById(popID).style.display = "none";
+          removeOverlay();
+        }
+      
+        function createOverlay(popID) {
+          const overlay = document.createElement('div');
+          overlay.className = 'popup-overlay';
+          overlay.onclick = function(){
+            hidePopup(popID);
+          };
+          document.body.appendChild(overlay);
+          overlay.style.display = 'block';
+        }
+      
+        function removeOverlay() {
+          const overlay = document.querySelector('.popup-overlay');
+          if (overlay) {
+            overlay.remove();
+          }
+        }
+
+
+document.getElementById('TLogin').addEventListener('click', function showIt(){
+    hidePopup('trainerPopup');
+    showPopup('trainerLogin');
+    removeEventListener('click',showIt);
+})
+
+document.getElementById('TSignUp').addEventListener('click', function showIt(){
+    hidePopup('trainerPopup');
+    showPopup('TrinerForm');
+    removeEventListener('click',showIt);
+})
+      </script>
+         
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</section>   
 </body>
 </html>

@@ -5,7 +5,7 @@ body {
   font-size: 30px;
 }
 
-.studentscontainer {
+.testcontainer {
   display: flex;
   margin-left: 10%;
   width: 80%;
@@ -42,12 +42,12 @@ body {
   color: #155724;
 }
 
-.student-list {
+.test-list {
   /* background-color: white; */
   /* border-radius: 10px; */
   padding: 20px 0 20px 0;
 }
-.student-item {
+.test-item {
   width: 100%;
   height: min-content;
   display: flex;
@@ -63,35 +63,26 @@ body {
   border-radius: 16px;
   margin-right: 18px;
 }
-.student-name {
+.reason {
   flex-grow: 1;
 }
 
-.student-actions {
+.test-actions {
   display: flex;
 }
-.student-actions a {
+.test-actions a {
   align-items: center;
   margin: 5px;
   cursor: pointer;
   padding: 10px 15px;
   border: none;
   border-radius: 16px;
-  /* color: #155724; */
 }
 
-.assign {
-  background-color: #4d8eef;
-}
-
-.student-actions .view {
-  background-color: #ffb700;
-}
-
-.student-actions .edit {
+.test-actions .accept {
   background-color: #1ec86c;
 }
 
-.student-actions .delete {
+.test-actions .decline {
   background-color: #f11515;
 }
