@@ -30,7 +30,12 @@ app.get('/trainer/dashboard' ,(req, res)=>{
   return  res.render('trainer/dashboard');
 })
 
+app.get('/AllStudents' ,(req, res)=>{
+   return  res.render('trainer/crudStudents');
+})
+
 //=====================================================================
+
 
 // app.get('/home' ,(req, res)=>{
 //   return  res.render('./home');
