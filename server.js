@@ -8,6 +8,9 @@ const port = 3000;
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, 'public')));
 
+const trainerRouter = require('./routes/trainerRouter');
+
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -21,28 +24,7 @@ app.get('/' ,(req, res)=>{
 })
 
 
-// ==========================trainer routes ===========================
-
-app.get('/trainer/layout' ,(req, res)=>{
-  return  res.render('trainer/layout');
-})
-app.get('/trainer/dashboard' ,(req, res)=>{
-  return  res.render('trainer/dashboard');
-})
-app.get('/trainer/manage-quiz' ,(req, res)=>{
-  return  res.render('trainer/manageQuiz');
-})
-
-app.get('/AllStudents' ,(req, res)=>{
-   return  res.render('trainer/crudStudents');
-})
-
-app.get('/AllRequests' ,(req, res)=>{
-   return  res.render('trainer/testRequests');
-})
-
-//=====================================================================
-
+app.use('/T', trainerRouter);
 
 // app.get('/home' ,(req, res)=>{
 //   return  res.render('./home');
