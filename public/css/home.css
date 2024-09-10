@@ -8,8 +8,8 @@ body{
     position: relative;
     z-index: 1;
     overflow-x: hidden;
-
 }
+
 body::before {
     content: "";
     position: absolute;
