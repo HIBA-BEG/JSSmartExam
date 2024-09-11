@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.container{
+    margin-left: 10%;
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   font-family: Itim;
+}
+
+
+
+.manage-quiz-add{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.manage-quiz-add h1{
+    text-align: left;
+     font-size: 50px;
+    line-height: 220px;
+    margin-left: 48px;
+ }
+ 
+ 
+
+ .quiz-container{
+    width: 97%;
+    height: 100%;
+    margin-left: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr); 
+    gap: 20px; 
+    
+ }
+
+ .card-content{
+    width: 80%;
+    height:45vh;
+    background-color: #CEDEBD;
+    border-radius: 10px;
+    box-shadow: -1px 5px 20px 0px #0000002e;;
+    
+    
+ }
+ 
+
+
+
+ .image{
+    width: 100%;
+    height: 50%;
+   
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .image img{
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+ }
+ .content{
+    width: 100%;
+    height: 40%;
+    
+ }
+ .content p {
+    padding-top:4px;
+    padding-left:15px ;
+ }
+ .content p span{
+    font-size: 18px;
+    color:#8ca266;
+ }
+ .take-button{
+    background-color: green;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   margin-top: 12px;
+    border-radius: 10px;
+   
+ }
+ .take-button a{
+text-decoration: none;
+color: white;
+ }
