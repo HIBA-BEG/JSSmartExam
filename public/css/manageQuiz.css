@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.container{
+    margin-left: 10%;
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   font-family: Itim;
+}
+
+
+
+.manage-quiz-add{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.manage-quiz-add h1{
+    text-align: left;
+     font-size: 50px;
+    line-height: 220px;
+    margin-left: 48px;
+ }
+ .add-quiz{
+    margin-right: 6.5%;
+    background-color: #8ca266;
+    padding: 10px 35px;
+    border-radius: 10px;
+    
+}
+.add-quiz a{
+   
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+ }
+
+ .quiz-container{
+    width: 97%;
+    height: 100%;
+   margin-left: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr); 
+    gap: 20px; 
+    
+ }
+
+ .card-content{
+    width: 80%;
+    height:40vh;
+    background-color: #CEDEBD;
+    border-radius: 10px;
+    box-shadow: -1px 5px 20px 0px #0000002e;;
+    
+    
+ }
+ .actions{
+    width: 100%;
+    height: 10%;
+  
+    display: flex;
+    justify-content: flex-end;
+
+ }
+ .edite{
+    padding: 5px 10px;
+    background-color: green;
+    margin-right: 5px;
+    border-radius: 5px;
+ }
+ .edite svg{
+    width: 19px;
+    height: 19px;
+ }
+ .delete{
+    padding: 5px 10px;
+    background-color: red;
+    border-radius: 5px;
+ }
+ .delete svg{
+    width: 19px;
+    height: 19px;
+ }
+
+
+ .image{
+    width: 100%;
+    height: 50%;
+   
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .image img{
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+ }
+ .content{
+    width: 100%;
+    height: 40%;
+    
+ }
+ .content p {
+    padding-top:4px;
+    padding-left:15px ;
+ }
+ .content p span{
+    font-size: 18px;
+    color:#8ca266;
+ }
