@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: #FAF1E4;
+}
+.container{
+    margin-left: 30%;
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   font-family: Itim;
+}
+
+
+
+.hello-name{
+    width: 100%;
+    height: 20vh;
+}
+.hello-name h1{
+   text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+   line-height: 80px;
+
+}
+.statistique{
+    width: 100%;
+    height: 33vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items:center ;
+}
+
+.welcome-card{
+    width: 100%;
+    height: 48vh;
+   
+   
+}
+
+.my-test{
+    width: 80%;
+    border-radius: 5px;
+    height: 80px;
+    background-color: #CEDEBD;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 20px 0px #ababab84;
+}
+.test{
+width: 100%;
+height: 50%;
+font-size: x-large;
+display: flex;
+justify-content: space-around;
+}
+.test-number{
+    width: 100%;
+    height: 50%;
+    font-size:xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+.validation-student-count{
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 80px;
+    background-color: #CEDEBD;
+    box-shadow: 0px 0px 20px 0px #ababab84;
+}
+.student-info{
+    width: 25%;
+    border-radius: 5px;
+    margin-top: 15%;
+    height: 90vh;
+    background-color: #CEDEBD;
+    box-shadow: 0px 0px 20px 0px #ababab84;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.profile{
+    width: 80%;
+    height: 40%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.my-profile-word{
+    font-size:xx-large ;
+}
+.profile-img svg{
+    width: 100px;
+    height: 100px;
+}
+.info-profile{
+    width: 80%;
+    height: 30%;
+    background-color: #435334;
+    border-radius: 10px;
+}
+.info-profile p {
+    padding-top:20px;
+    padding-left:15px ;
+    color: white;
+   
+}
+
+
+@media (min-width: 568px) {
+    .container{
+        margin-left: 10%;
+        width: 90%;
+        height: 100vh;
+        
+        
+    }
+    .hello-name h1{
+        text-align: left;
+         font-size: 90px;
+        line-height: 220px;
+        margin-left: 48px;
+     }
+
+     .statistique{
+        width: 100%;
+        height: 33vh;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around ;
+        align-items:center ;
+    }
+
+    .my-test{
+        width: 25%;
+        border-radius: 5px;
+
+        height: 100px;
+        margin-bottom: 0px;
+    }
+    .validation-student-count{
+        width: 25%;
+        border-radius: 5px;
+        margin-bottom: 0px;
+        height: 100px;
+    }
+  
+    .card{
+        width: 92%;
+        height: 90%;
+        
+        margin-left: 4%;
+        margin-top: 0%;
+     
+        border-radius: 5px;
+    }
+}
