@@ -8,10 +8,10 @@ const router = express.Router();
 router.get("/trainer/layout", (req, res) => {
   return res.render("trainer/layout");
 });
-router.get("/trainer/dashboard", (req, res) => {
+router.get("/dashboard", (req, res) => {
   return res.render("trainer/dashboard");
 });
-router.get("/trainer/manage-quiz", (req, res) => {
+router.get("/manage-quiz", (req, res) => {
   return res.render("trainer/manageQuiz");
 });
 

@@ -1,68 +1,93 @@
 
-              <div class="card-body p-5 " style="border-radius: 15px;" id="TrinerForm">
-              <div class="row g-0">
-                <div class="col-lg-6" id="FormInfo">
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <img src="images/Ellipse 28.png"  alt="">
-                            <h1 class="text-center">Let’s get you set up</h1>
-                            <p class="text-center mt-5">its should be only couple of steps </p>
-                        </div>
-                    </div>
-                
-                </div>
-
-                <form class="col-lg-6 p-5 text-white" id="tForm">
-                  <div class="p-5 text-dark">  
-
-                    <div class="row">
-                      <div class="col-md-6 mb-4 pb-2">
-                        <label class="form-label" for="Name">Name</label>
-                        <div  class="form-outline form-white">
-                          <input type="text" id="Name" class="form-control form-control-lg" />
-                        </div>
-  
-                      </div>
-                      <div class="col-md-6 mb-4 pb-2">
-                        <label class="form-label" for="LastName">Last Name</label>
-                        <div  class="form-outline form-white">
-                          <input type="text" id="LastName" class="form-control form-control-lg" />
-                        </div>
-  
-                      </div>
-                    </div>
-  
-                    <div class="mb-4 pb-2">
-                        <label class="form-label" for="Adress">Adress</label>
-                      <div  class="form-outline form-white">
-                        <input type="text" id="Adress" class="form-control form-control-lg" />
-                      </div>
-                    </div>
-  
-
-                    <div class="mb-4">
-                        <label class="form-label" for="DateOfBirth">Date Of birth</label>
-                        <div  class="form-outline form-white">
-                          <input type="date" id="DateOfBirth" class="form-control form-control-lg" />
-                          </div>
-                      </div>
-                 
-  
-                    <div class="mb-4">
-                        <label class="form-label" for="specialty">Specialty</label>
-                      <div  class="form-outline form-white">
-                        <input type="text" id="specialty" class="form-control form-control-lg" />
-                      </div>
-                    </div>
-  
-                        <button  class="btn mt-4     btn-lg">cancel</button>
-                        <button  type="submit" class="btn  mt-4 btn-lg">Register</button>
-          
-                  </div>
-                </form>
-              </div>
+<div class="card-body p-5 " style="border-radius: 15px;" id="TrinerForm">
+  <div class="row g-0">
+    <div class="col-lg-6" id="FormInfo">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="images/Ellipse 28.png"  alt="">
+                <h1 class="text-center">Let’s get you set up</h1>
+                <p class="text-center mt-5">its should be only couple of steps </p>
             </div>
+        </div>
+    </div>
+
+    <form action="/signUp" method="post" class="col-lg-6 text-white" id="tForm">
+      <div class="p-5 text-dark">  
+
+        <div class="row">
+          <div class="col-md-6 ">
+            <label class="form-label" for="FirstName">Name</label>
+            <div  class="form-outline form-white">
+              <input type="text" name="FirstName" id="FirstName" class="form-control form-control-lg" required />
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="LastName">Last Name</label>
+            <div  class="form-outline form-white">
+              <input type="text" name="LastName" id="LastName" class="form-control form-control-lg" required />
+            </div>
+
           </div>
         </div>
+
+
+        <div class=" ">
+          <label class="form-label" for="email">Email</label>
+        <div  class="form-outline form-white">
+          <input type="email" name="email" id="email" class="form-control form-control-lg" required/>
+        </div>
+        </div>
+
+        <div class="">
+        <label class="form-label" for="Password">Password</label>
+        <div  class="form-outline form-white">
+        <input type="password" name="Password" id="Password" class="form-control form-control-lg" required/>
+        </div>
+        </div>
+
+        <div class="pb-2">
+            <label class="form-label" for="adress">Adress</label>
+          <div  class="form-outline form-white">
+            <input type="text" name="adress" id="adress" class="form-control form-control-lg" required/>
+          </div>
+        </div>
+
+
+        <div class="">
+            <label class="form-label" for="birthDay">Date Of birth</label>
+            <div  class="form-outline form-white">
+              <input type="date" name="birthDay" id="birthDay" class="form-control form-control-lg" required />
+              </div>
+          </div>
+     
+<!-- 
+        <div class="">
+            <label class="form-label" for="specialty">Specialty</label>
+          <div  class="form-outline form-white">
+            <input type="text" id="specialty" class="form-control form-control-lg" required/>
+          </div>
+        </div> -->
+
+            <button  class="btn mt-3 btn-lg" onclick="hidePopup('TrinerForm')">cancel</button>
+            <button  type="submit" class="btn  mt-3 btn-lg">Register</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
+
+<script>
+
+
+// function validateNames(name){
+
+//   let 
+
+// }
+
+
+</script>
