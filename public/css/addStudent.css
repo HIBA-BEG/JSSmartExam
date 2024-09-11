@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+/* body {
+  background-color: #faf1e4;
+  font-family: Itim;
+  
+}
+
+.class-Name {
+   
+}
+
+
+.class-actions {
+    display: flex;
+  }
+  .class-actions a {
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 16px;
+   
+  }
+  
+  .class-actions .edit {
+    background-color: #1ec86c;
+  }
+  
+  .class-actions .delete {
+    background-color: #f11515;
+  }
+   */
+
+body {
+    font-family: Itim;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f1e4;
+    font-size: 30px;
+}
+/* 
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+} */
+
+/* .title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+} */
+
+/* Form container and header */
+svg {
+    width: 32px;
+    height: 32px;
+}
+
+.class-actions .edit {
+    background-color: #1ec86c;
+  }
+  
+  .class-actions .delete {
+    background-color: #f11515;
+  }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CEDEBD;
+    padding: 25px;
+    border-radius: 16px;
+    margin : 40px;
+}
+
+.header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.form-container {
+    background-color: #CEDEBD;
+    padding: 20px;
+    border-radius: 16px;
+    margin : 40px;
+}
+.icons {
+    display: flex;
+}
+
+.icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.icon.edit {
+    background-color: #74b774;
+}
+
+.icon.delete {
+    background-color: #e87474;
+}
+
+.icon i {
+    color: white;
+    font-size: 18px;
+}
+
+/* Form styles */
+.student-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 48%;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #74b774;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-btn,
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-btn {
+    background-color: #eee;
+}
+
+.submit-btn {
+    background-color: #9CAB82;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #5b6d5b;
+}

@@ -23,4 +23,10 @@ router.get("/AllRequests", (req, res) => {
   return res.render("trainer/testRequests");
 });
 
+router.get("/addOneStudent", (req, res) => {
+  return res.render("trainer/addStudent");
+});
+
+
+
 module.exports = router;

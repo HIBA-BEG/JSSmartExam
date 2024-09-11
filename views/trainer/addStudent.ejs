@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add students</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/addStudent.css">
+</head>
+</head>
+
+<body>
+  <!-- <div>
+    <h2 class="class-Name">
+      JS Pirates
+    </h2>
+    <div class="class-actions">
+      <a href="#" title="accept" class="accept">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#ffffff" d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+        </svg>
+      </a>
+      <a href="#" title="decline" class="decline">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="#ffffff" d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
+        </svg>
+      </a>
+    </div>
+  </div> -->
+
+  <div class="header">
+    <h3>JS pirates</h3>
+    <div class="icons">
+      <!-- <button class="icon edit"><i class="fa fa-pencil"></i></button> -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="#ffffff" d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+      </svg>
+      <!-- <button class="icon delete"><i class="fa fa-trash"></i></button> -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="#ffffff" d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
+      </svg>
+    </div>
+  </div>
+  <div class="form-container">
+    <form action="/add-student" method="POST" class="student-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name :</label>
+          <input type="text" id="prenom" name="prenom" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="dob">Date of birth :</label>
+          <input type="date" id="dateNaissance" name="dateNaissance" required>
+        </div>
+        
+
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="lastName">Last Name :</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="registrationDate">registration date :</label>
+          <input type="date" id="registrationDate" name="registrationDate" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="motdepasse">registration date :</label>
+          <input type="password" id="motdepasse" name="motdepasse" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address :</label>
+        <input type="text" id="addresse" name="addresse" required>
+      </div>
+      <div class="buttons">
+        <button type="button" class="back-btn">Back</button>
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
