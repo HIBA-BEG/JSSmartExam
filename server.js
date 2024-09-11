@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const port = 3000;
 const authRoutes = require('./routes/AuthRoutes');
 const trainerRouter = require('./routes/trainerRouter');
+const studentRouter = require('./routes/studentRouter');
+
 
 
 
