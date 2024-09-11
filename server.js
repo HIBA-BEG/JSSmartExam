@@ -9,6 +9,7 @@ const port = 3000;
 // app.use(express.static(path.join(__dirname, 'public')));
 
 const trainerRouter = require('./routes/trainerRouter');
+const studentRouter = require('./routes/studentRouter');
 
 
 app.set('view engine', 'ejs');
@@ -30,6 +31,8 @@ app.use('/T', trainerRouter);
 //   return  res.render('./home');
 // })
 
+//==========student router===================
+app.use('/', studentRouter);
 
 
 app.listen(port, () => {
