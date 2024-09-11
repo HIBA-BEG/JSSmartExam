@@ -31,6 +31,7 @@ app.use('/TRAINER', trainerRouter);
 
 
 app.use('/',authRoutes);
+app.use('/STUDENT', studentRouter);
 
 
 app.listen(port, () => {
