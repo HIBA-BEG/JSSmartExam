@@ -13,9 +13,16 @@ const signUpShema = joi.object({
     birthDay: joi.date().max('12-31-2010').min('12-31-1930').required(),
     email: joi.string().email().required(),
     Password: joi.string().min(8).required(),
-    Password: joi.string().min(8).required(),
+    specialty: joi.string().required(),
 
 
 });
 
-module.exports = {signUpShema};
+
+const loginShema = joi.object({
+
+    email : joi.string().email().required(),
+    Password : joi.string().required(),
+})
+
+module.exports = {signUpShema , loginShema};

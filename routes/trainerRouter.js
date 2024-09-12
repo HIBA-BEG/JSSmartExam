@@ -1,16 +1,24 @@
 const express = require("express");
 const router = express.Router();
+const {authmiddleware} = require('../helpers/middleware/AuthMiddleware');
 const classesController = require('../controllers/classesController');
 
 // router.get("/", (req, res) => {
 //   res.render("trainer/dashboard", { title: "home page" });
 // });
 
-router.get("/trainer/layout", (req, res) => {
+router.use(authmiddleware);
+
+router.get("/trainer/layout",  (req, res) => {
   return res.render("trainer/layout");
-});
-router.get("/dashboard", (req, res) => {
-  return res.render("trainer/dashboard");
+}); 
+
+router.get("/dashboard",  (req, res) => {
+
+  const {firstName, lastName, email, specialty} = req.session.user;
+
+  return res.render("trainer/dashboard" , {firstName, lastName, email, specialty});
+
 });
 router.get("/manage-quiz", (req, res) => {
   return res.render("trainer/manageQuiz");
