@@ -36,6 +36,18 @@ const user = {
         }) 
     },
 
+    findTrainerByEmail: (email , callback) => {
+
+        const sql = `SELECT * FROM utilisateurs JOIN formateurs ON utilisateurs.id_utilisateur = formateurs.utilisateurID WHERE utilisateurs.email = ?`;
+        db.query(sql , [email], (err , result) => {
+
+            if(err) throw err ;
+            callback(result[0]);
+        })
+    }
+
+
+
    
 }
 
