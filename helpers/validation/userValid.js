@@ -25,4 +25,10 @@ const loginShema = joi.object({
     Password : joi.string().required(),
 })
 
-module.exports = {signUpShema , loginShema};
+
+
+const studentLoginShema = joi.object({
+
+    email : joi.string().email().required()
+})
+module.exports = {signUpShema , loginShema , studentLoginShema};

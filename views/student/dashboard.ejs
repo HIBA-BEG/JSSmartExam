@@ -10,7 +10,7 @@
     <%- include('layoutStudent') %>
     <main class="container">
             <div class="hello-name">
-                <h1>Hello , Student</h1>
+                <h1>Hello , <%= firstName%> <%= lastName %></h1>
             </div>
 
             <div class="statistique">
@@ -41,8 +41,8 @@
                     </div>
                  </div>
                  <div class="info-profile">
-                    <p>address</p>
-                    <p>birthday</p>
+                    <p><%= adress %></p>
+                    <p><%= birthDay %></p>
                     <p>inscription date</p>
                     <p>nbr des test passe</p>
                    
