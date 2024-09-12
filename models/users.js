@@ -43,7 +43,17 @@ const user = {
 
             if(err) throw err ;
             callback(result[0]);
-        })
+        });
+    },
+
+    findStudentByEmail: (email , callback) => {
+
+        const sql = `SELECT * FROM utilisateurs JOIN etudiants ON utilisateurs.id_utilisateur = etudiants.utilisateurID WHERE utilisateurs.email = ?`;
+        db.query(sql , [email], (err , result) => {
+
+            if(err) throw err;
+            callback(result[0]);
+        });
     }
 
 

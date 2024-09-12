@@ -11,4 +11,8 @@ if(req.session.user){
 }
 
 
+
+
+
+
 module.exports = {authmiddleware};

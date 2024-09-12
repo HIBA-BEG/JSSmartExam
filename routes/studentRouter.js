@@ -1,12 +1,21 @@
 const express = require("express");
 const router = express.Router();
+const {authmiddleware} = require('../helpers/middleware/AuthMiddleware');
+
+
+
+router.use(authmiddleware);
 
 
 router.get("/student/layoutStudent", (req, res) => {
     return res.render("student/layoutStudent");
   });
 router.get("/student/dashbord", (req, res) => {
-    return res.render("student/dashboard");
+
+
+  const {firstName , lastName , email ,birthDay, adress } = req.session.user ;
+
+    return res.render("student/dashboard" , {firstName , lastName ,email ,birthDay , adress});
   });
 router.get("/student/quiz", (req, res) => {
     return res.render("student/quizAssigned");
