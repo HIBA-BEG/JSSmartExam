@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const { Tables } = require('./initialTables');
+const {Tables} = require('./jssmart');
 
 require('dotenv').config();
 
@@ -17,13 +17,13 @@ connection.connect((err) => {
     }
     console.log('Connected to the database');
 
-    // unitialize tables after connecting to db
-    Tables.forEach((table, i) => {
-        connection.query(table, (err) => {
-            if (err) throw err;
-            console.log(`${i}=table created or already exists`);
-        });
-    })
+
+    //  Tables.forEach((table, i) => {
+    //     connection.query(table, (err) => {
+    //         if (err) throw err;
+    //         console.log(`${i}=table created or already exists`);
+    //     });
+    // })
 
 
 
