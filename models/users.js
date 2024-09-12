@@ -25,6 +25,17 @@ const user = {
         })
     },
 
+
+    crateTrainer : (specialty , userId , callback) => {
+
+        const sql = 'INSERT INTO formateurs (specialite , utilisateurID) VALUES (?,?)';
+        db.query(sql , [specialty, userId] , (err , result) => {
+
+            if(err) throw err;
+            callback(result);
+        }) 
+    },
+
    
 }
 

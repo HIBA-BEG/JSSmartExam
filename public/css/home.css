@@ -250,3 +250,21 @@ font-variation-settings:
         background-color: #596947;
         padding: 2% 15%;
     }
+
+#btnG{
+margin-left: 90%;
+}
+
+
+#btnG button{     
+padding: 7px 30px;
+border-radius: 8px;
+
+}
+
+
+#btnG button:hover{  
+
+background-color: #435334;
+    
+}
