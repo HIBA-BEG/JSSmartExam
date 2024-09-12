@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const bodyParser = require('body-parser');
+const session = require('express-session');
 const port = 3000;
 const authRoutes = require('./routes/AuthRoutes');
 const trainerRouter = require('./routes/trainerRouter');
@@ -9,6 +9,16 @@ const studentRouter = require('./routes/studentRouter');
 
 
 
+app.use(session({
+  secret: 'key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge:1000 * 60 * 60,
+    httpOnly: true,
+    secure: false
+  }
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

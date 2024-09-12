@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const user = require('../models/users.js');
-const {signUpShema} = require('../helpers/validation/userValid.js');
+const {signUpShema , loginShema} = require('../helpers/validation/userValid.js');
+const session = require('express-session');
 
 
 
@@ -13,6 +14,7 @@ const {error} = signUpShema.validate(req.body);
 if(error){
 
     res.status(400).send(error.details[0].message);
+    return false ;
 }   
 
     const {FirstName , LastName ,  adress , birthDay , email , Password , specialty } = req.body;
@@ -27,6 +29,14 @@ if(error){
 
             user.crateTrainer(specialty,userId,(result)=>{
 
+                req.session.user = {
+                    id: userId,
+                    firstName: FirstName,
+                    lastName: LastName,
+                    email: email,
+                    specialty: specialty
+                };
+        
                 res.redirect('/TRAINER/dashboard');
 
             });
@@ -39,9 +49,17 @@ if(error){
 
 exports.login = (req , res) => {
 
+
+    const {error} = loginShema.validate(req.body);
+
+    if(error){
+        res.status(401).send(error.details[0].message);
+        return false;
+    }
+
     const {email , Password} = req.body;
 
-    user.findByEmail(email , (user) => {
+    user.findTrainerByEmail(email , (user) => {
 
         if(!user){
             return res.status(404).send('no match data');
@@ -51,10 +69,40 @@ exports.login = (req , res) => {
 
             if(err) throw err;
             if(isMatch){
+
+                req.session.user = {
+                    id: user.id_utilisateur,
+                    firstName: user.nom,
+                    lastName: user.prenom,
+                    email: user.email,
+                    trinerId: user.id_formateur,
+                    specialty: user.specialite
+                    
+                }
                 res.redirect('/TRAINER/dashboard')
             }else{
                 res.status(400).send('no match data')
             }
         });
-    });
-}
+    })
+};
+
+
+
+exports.logout = (req , res ) => {
+
+    if(req.session){
+
+        req.session.destroy(err => {
+
+            if(err){
+                req.status(401).send('it could not get logout');
+            }else{
+                res.redirect('/');
+            }
+        });
+    }else{
+        res.redirect('/');
+    };
+
+};
