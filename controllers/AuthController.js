@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const user = require('../models/users.js');
-const {signUpShema , loginShema} = require('../helpers/validation/userValid.js');
+const {signUpShema , loginShema , studentLoginShema} = require('../helpers/validation/userValid.js');
 const session = require('express-session');
 
 
@@ -106,3 +106,41 @@ exports.logout = (req , res ) => {
     };
 
 };
+
+
+exports.studentLogin = (req , res) => {
+
+    const {error} = studentLoginShema.validate(req.body);
+
+    if(error){
+
+        res.status(401).send(error.details[0].message);
+       
+    };  
+
+    const {email} = req.body;
+
+    user.findStudentByEmail(email , (user) => {
+
+        if(!user){
+
+            res.status(400).send('no match data');
+        }
+
+        req.session.user = {
+
+            id: user.utilisateurID,
+            firstName: user.nom,
+            lastName: user.prenom,
+            email: user.email,
+            studentId: user.id_etudiant,
+            adress: user.adresse,
+            birthDay: user.dateNaissance
+        }
+
+
+        console.log(req.session.user);
+        res.redirect('/STUDENT/student/dashbord')
+    })
+
+}
