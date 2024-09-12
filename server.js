@@ -1,13 +1,32 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const session = require('express-session');
+const flash = require('connect-flash'); 
 const bodyParser = require('body-parser');
 const port = 3000;
 const authRoutes = require('./routes/AuthRoutes');
 const trainerRouter = require('./routes/trainerRouter');
 const studentRouter = require('./routes/studentRouter');
+ 
 
+app.use(flash())
 
+app.use((req, res, next) => {
+  res.locals.flash = req.flash(); // Pass flash messages to the view
+  next();
+});
+
+app.use(session({
+  secret: 'key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge:1000 * 60 * 60,
+    httpOnly: true,
+    secure: false
+  }
+}));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
