@@ -26,7 +26,9 @@ exports.createForm = (req, res) => {
 };
 
 
+
 exports.createStudent = (req, res) => {
+
   const newStudent = {
     prenom: req.body.prenom,
     dateNaissance: req.body.dateNaissance,

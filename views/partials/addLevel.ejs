@@ -9,17 +9,21 @@
 
         <div class="form-outline mb-4">
             <label class="form-label" for="title">Title</label>
-            <input type="text" name="title" id="title" class="form-control form-control-lg" required />
+            <select name="Title" id="Title" class="form-control form-control-lg" style="background: none; border: 3px solid rgb(33, 6, 89);" required >
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
           </div>
   
           <div class="form-outline">
             <label class="form-label" for="min">Minimum number of points : </label>
-            <input type="number" name="min" id="min" class="form-control form-control-lg" min="2" required />
+            <input type="number" name="min" id="min" class="form-control form-control-lg" min="1" max="100" required />
           </div>
   
           <div class="form-outline">
               <label class="form-label" for="max">Maximum number of points : </label>
-              <input type="number" name="max" id="max" class="form-control form-control-lg" max="20" required />
+              <input type="number" name="max" id="max" class="form-control form-control-lg" min="1" max="100" required />
           </div>
 
        </div>
