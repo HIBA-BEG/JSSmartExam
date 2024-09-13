@@ -11,7 +11,7 @@ const subjectController = require('../controllers/subjectController');
 //   res.render("trainer/dashboard", { title: "home page" });
 // });
 
-// router.use(authmiddleware);
+router.use(authmiddleware);
 
 router.get("/trainer/layout", (req, res) => {
   return res.render("trainer/layout");
