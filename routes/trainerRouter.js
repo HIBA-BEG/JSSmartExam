@@ -36,6 +36,9 @@ router.post('/addOneStudent', studentController.createStudent);
 
 router.get('/deleteStudent/:id', studentController.deleteEtudiant);
 
+router.get('/updateStudent/:id', studentController.updateForm);
+router.post('/updateStudent/:id', studentController.updateStudent);
+
 // router.get("/addOneStudent", (req, res) => {
 //   return res.render("trainer/addStudent");
 // });
