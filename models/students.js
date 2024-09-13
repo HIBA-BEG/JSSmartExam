@@ -15,8 +15,9 @@ const Etudiant = {
       `SELECT * FROM utilisateurs 
       INNER JOIN etudiants 
       ON utilisateurs.id_utilisateur = etudiants.utilisateurID
-      WHERE id = ?`,
-      [id], callback
+      HAVING etudiants.id_etudiant = ?`,
+      [id],
+      callback
     );
   },
 
@@ -27,7 +28,10 @@ const Etudiant = {
     const query1 = `INSERT INTO utilisateurs (nom, prenom, email, dateNaissance, adresse) 
                       VALUES (?, ?, ?, ?, ?)`;
 
-    db.query( query1, [nom, prenom, email, dateNaissance, adresse], (err, result) => {
+    db.query(
+      query1,
+      [nom, prenom, email, dateNaissance, adresse],
+      (err, result) => {
         if (err) return callback(err);
 
         const utilisateurID = result.insertId;
@@ -38,7 +42,7 @@ const Etudiant = {
       }
     );
   },
-  
+
   deleteEtudiant: (id, callback) => {
     db.query( 
       `DELETE utilisateurs, etudiants 
@@ -46,7 +50,19 @@ const Etudiant = {
       INNER JOIN etudiants 
       ON utilisateurs.id_utilisateur = etudiants.utilisateurID 
       WHERE etudiants.id_etudiant = ? `,
-      [id], callback
+      [id],
+      callback
+    );
+  },
+
+  updateStudent: (id, data, callback) => {
+    db.query(
+      `UPDATE utilisateurs 
+     INNER JOIN etudiants ON utilisateurs.id_utilisateur = etudiants.utilisateurID
+     SET utilisateurs.nom = ?, utilisateurs.prenom = ?, utilisateurs.adresse = ?, utilisateurs.email = ?, utilisateurs.dateNaissance = ?
+     WHERE etudiants.id_etudiant = ?`,
+     [data.nom, data.prenom, data.adresse, data.email, data.dateNaissance, id],
+      callback
     );
   },
 };

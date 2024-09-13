@@ -9,7 +9,6 @@ const authRoutes = require('./routes/AuthRoutes');
 const trainerRouter = require('./routes/trainerRouter');
 const studentRouter = require('./routes/studentRouter');
  
-
 app.use(session({
   secret: 'key',
   resave: false,
@@ -27,6 +26,13 @@ app.use((req, res, next) => {
   res.locals.flash = req.flash();
   next();
 });
+
+app.use((req, res, next) => {
+  res.locals.flash = req.flash(); // Pass flash messages to the view
+  next();
+});
+
+
 
 
 app.set('view engine', 'ejs');
