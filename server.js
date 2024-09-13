@@ -10,7 +10,12 @@ const trainerRouter = require('./routes/trainerRouter');
 const studentRouter = require('./routes/studentRouter');
  
 
+app.use(flash())
 
+app.use((req, res, next) => {
+  res.locals.flash = req.flash(); // Pass flash messages to the view
+  next();
+});
 
 app.use(session({
   secret: 'key',
@@ -22,11 +27,26 @@ app.use(session({
     secure: false
   }
 }));
+
 app.use(flash())
+
+app.use((req, res, next) => {
+  res.locals.flash = req.flash();
+  next();
+});
+
 app.use((req, res, next) => {
   res.locals.flash = req.flash(); // Pass flash messages to the view
   next();
 });
+
+
+
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,14 +61,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 
-
+  
 app.get('/' ,(req, res)=>{
    return  res.render('index');
 })
 
 
 app.use('/TRAINER', trainerRouter);
-
 
 app.use('/',authRoutes);
 app.use('/STUDENT', studentRouter);

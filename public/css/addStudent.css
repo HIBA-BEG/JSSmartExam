@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+body {
+  font-family: Itim;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f1e4;
+  font-size: 30px;
+}
+
+svg {
+  width: 32px;
+  height: 32px;
+}
+
+.iconsSVG .edit {
+  background-color: #1ec86c;
+}
+
+/* background-color: #e87474;
+  background-color: #74b774; */
+
+.iconsSVG .delete {
+  background-color: #f11515;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #cedebd;
+  padding: 25px;
+  border-radius: 16px;
+  margin: 40px;
+}
+
+.header h2 {
+  font-size: 36px;
+  margin: 0;
+  color: #333;
+}
+
+.form-container {
+  background-color: #cedebd;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 40px;
+  /* height: 70%; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.iconsSVG {
+  display: flex;
+}
+
+.iconsSVG a {
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 16px;
+  /* color: #155724; */
+}
+.student-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 48%;
+}
+
+label {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #74b774;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-btn,
+.submit-btn {
+  padding: 10px 20px;
+  font-size: 24px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-btn {
+  background-color: #eee;
+}
+
+.submit-btn {
+  background-color: #9cab82;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #5b6d5b;
+}

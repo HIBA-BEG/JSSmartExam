@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { authmiddleware } = require('../helpers/middleware/AuthMiddleware');
 const classesController = require('../controllers/classesController');
+const studentController = require('../controllers/studentController');
+const levelController = require('../controllers/levelController');
+
 const subjectController = require('../controllers/subjectController');
 
 // router.get("/", (req, res) => {
@@ -25,9 +28,23 @@ router.get("/manage-quiz", (req, res) => {
   return res.render("trainer/manageQuiz");
 });
 
-router.get("/AllStudents", (req, res) => {
-  return res.render("trainer/crudStudents");
-});
+// router.get("/AllStudents", (req, res) => {
+//   return res.render("trainer/crudStudents");
+// });
+
+router.get('/AllStudents', studentController.allStudents);
+
+router.get('/addOneStudent', studentController.createForm);
+router.post('/addOneStudent', studentController.createStudent);
+
+router.get('/deleteStudent/:id', studentController.deleteEtudiant);
+
+router.get('/updateStudent/:id', studentController.updateForm);
+router.post('/updateStudent/:id', studentController.updateStudent);
+
+// router.get("/addOneStudent", (req, res) => {
+//   return res.render("trainer/addStudent");
+// });
 
 router.get("/AllRequests", (req, res) => {
   return res.render("trainer/testRequests");
@@ -54,8 +71,11 @@ router.get("/editeSubjectSubtopicPage/:id", async (req, res) => {
   return res.render("trainer/editeSubjectSubtopicPage", { subjects: subjects });
 });
 
-// add class
+
 router.post("/addClass", classesController.addClass);
+
+router.post('/AddLevel' , levelController.createLevel);
+
 // add subject and subTopic
 router.post("/add-subject", subjectController.addSubject);
 
