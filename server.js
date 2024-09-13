@@ -23,17 +23,16 @@ app.use(session({
 app.use(flash())
 
 app.use((req, res, next) => {
-  res.locals.flash = req.flash(); // Pass flash messages to the view
+  res.locals.flash = req.flash();
   next();
 });
-
-
-app.use(flash())
 
 app.use((req, res, next) => {
   res.locals.flash = req.flash(); // Pass flash messages to the view
   next();
 });
+
+
 
 
 app.set('view engine', 'ejs');
@@ -61,7 +60,6 @@ app.get('/' ,(req, res)=>{
 
 
 app.use('/TRAINER', trainerRouter);
-
 
 app.use('/',authRoutes);
 app.use('/STUDENT', studentRouter);
