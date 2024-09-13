@@ -10,13 +10,16 @@ router.use(authmiddleware);
 router.get("/student/layoutStudent", (req, res) => {
     return res.render("student/layoutStudent");
   });
-router.get("/student/dashbord", (req, res) => {
 
+
+router.get("/student/dashbord", (req, res) => {
 
   const {firstName , lastName , email ,birthDay, adress } = req.session.user ;
 
     return res.render("student/dashboard" , {firstName , lastName ,email ,birthDay , adress});
   });
+
+
 router.get("/student/quiz", (req, res) => {
     return res.render("student/quizAssigned");
   });

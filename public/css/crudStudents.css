@@ -183,3 +183,42 @@ form{
   z-index: 10;
 }
 
+
+
+
+
+#addClass{
+  display: none;
+  margin: 15px 0px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: #9CAB82;
+  width: 35%;
+
+}
+      
+  #addClass input{
+      background: none;
+      border: solid rgb(24, 2, 96) 3px;
+  }
+  
+  #addClass button{
+      margin-top: 20%;
+      background-color: #596947;
+      padding: 2% 15%;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+

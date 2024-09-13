@@ -3,6 +3,8 @@ const router = express.Router();
 const {authmiddleware} = require('../helpers/middleware/AuthMiddleware');
 const classesController = require('../controllers/classesController');
 const studentController = require('../controllers/studentController');
+const levelController = require('../controllers/levelController');
+
 
 // router.get("/", (req, res) => {
 //   res.render("trainer/dashboard", { title: "home page" });
@@ -50,10 +52,10 @@ router.get("/subjectSubtopicPage", (req, res) => {
   return res.render("trainer/subjectSubtopicPage");
 });
 
-// add class
+
 router.post("/addClass", classesController.addClass);
 
-
+router.post('/AddLevel' , levelController.createLevel);
 
 
 module.exports = router;
