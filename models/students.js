@@ -21,6 +21,7 @@ const Etudiant = {
   },
 
   createStudent: (studentData, callback) => {
+
     const { nom, prenom, email, dateNaissance, adresse } = studentData;
 
     const query1 = `INSERT INTO utilisateurs (nom, prenom, email, dateNaissance, adresse) 
@@ -39,7 +40,7 @@ const Etudiant = {
   },
   
   deleteEtudiant: (id, callback) => {
-    db.query(
+    db.query( 
       `DELETE utilisateurs, etudiants 
       FROM utilisateurs 
       INNER JOIN etudiants 
