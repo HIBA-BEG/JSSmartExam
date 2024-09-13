@@ -8,7 +8,7 @@ const subjectController = require('../controllers/subjectController');
 //   res.render("trainer/dashboard", { title: "home page" });
 // });
 
-router.use(authmiddleware);
+// router.use(authmiddleware);
 
 router.get("/trainer/layout", (req, res) => {
   return res.render("trainer/layout");
@@ -43,6 +43,15 @@ router.post("/delete-subject/:id", subjectController.deleteSubject);
 
 router.get("/subjectSubtopicPage", (req, res) => {
   return res.render("trainer/subjectSubtopicPage");
+});
+router.get("/editeSubjectSubtopicPage/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const subjects = await subjectController.redSubjectById(id);
+
+  console.log(subjects)
+
+  return res.render("trainer/editeSubjectSubtopicPage", { subjects: subjects });
 });
 
 // add class

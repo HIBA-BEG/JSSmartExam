@@ -41,6 +41,20 @@ module.exports = {
             console.error('Error get all sujet:', err);
         }
     },
+    redSubjectById: async (id) => {
+        try {
+            const result = await db
+                .promise()
+                .query(
+                    'SELECT * FROM sujets INNER JOIN subsujets ON subsujets.sujetID = sujets.id_sujet WHERE id_sujet = ?',
+                    [id]
+                )
+            return result;
+
+        } catch (err) {
+            console.error('Error get sujet:', err);
+        }
+    },
     deleteSubject: async (id) => {
         try {
             const result = await db

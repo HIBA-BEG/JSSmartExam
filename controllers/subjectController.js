@@ -1,10 +1,10 @@
 const subjectModel = require('../models/subject');
 
 exports.addSubject = async (req, res) => {
-    
+
     const data = req.body;
-   
-    
+
+
     // data.formateurID = formateurID;
     if (!data) {
         return res.status(400).json({ error: 'Missing required fields' });
@@ -32,6 +32,20 @@ exports.redAllSubjects = async (req, res) => {
     } catch (error) {
         console.error("Error:", error);
         res.status(500).json({ message: `An error occurred: ${error.message}` });
+    }
+};
+exports.redSubjectById = async (id) => {
+    try {
+
+
+        const subjects = await subjectModel.redSubjectById(id);
+
+
+
+        return subjects
+    } catch (error) {
+        console.error("Error:", error);
+
     }
 };
 
