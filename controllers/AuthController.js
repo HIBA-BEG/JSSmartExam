@@ -124,7 +124,7 @@ exports.studentLogin = (req , res) => {
 
         if(!user){
 
-            res.status(400).send('no match data');
+           return res.status(400).send('no match data');
         }
 
         req.session.user = {
@@ -137,7 +137,6 @@ exports.studentLogin = (req , res) => {
             adress: user.adresse,
             birthDay: user.dateNaissance
         }
-
 
         console.log(req.session.user);
         res.redirect('/STUDENT/student/dashbord')

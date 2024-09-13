@@ -1,8 +1,10 @@
+const session = require('express-session');
 const db = require('../config/database');
 
 module.exports = {
     addClass:async (data) => {
         try {
+
             const [result] = await db
                 .promise()
                 .query(
