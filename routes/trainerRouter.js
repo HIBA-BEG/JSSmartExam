@@ -34,7 +34,15 @@ router.get("/manage-quiz", (req, res) => {
 
 router.get('/AllStudents', studentController.allStudents);
 
-router.get('/addOneStudent', studentController.createForm);
+router.get('/addOneStudent', (req,res)=>{
+
+  const {className} = req.session.user;
+
+console.log(className);
+
+  res.render("trainer/addStudent" ,{className} );
+
+});
 router.post('/addOneStudent', studentController.createStudent);
 
 router.get('/deleteStudent/:id', studentController.deleteEtudiant);
