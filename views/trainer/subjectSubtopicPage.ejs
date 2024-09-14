@@ -10,14 +10,16 @@
 
 <body>
     <main class="container">
-        <form action="">
+        <form action="/trainer/add-subject" method="POST">
         <div class="subject-content">
             <div class="add-word">
                 <p>Add subject</p>
             </div>
             <div class="input">
                 <label for="">subject name:</label>
-                <input type="text">
+                <input type="text" id="subject" name="title" required>
+                <!-- just pour insert le id de formateur -->
+                
             </div>
             <button class="back-button">back</button>
         </div>
@@ -27,13 +29,13 @@
             </div>
             <div class="input-subtopic">
                 <label for="">first:</label>
-                <input type="text">
+                <input type="text" id="subtopic1" name="subSujets[]" required>
                 <label for="">second:</label>
-                <input type="text">
+                <input type="text" id="subtopic2" name="subSujets[]" required>
                 <label for="">third:</label>
-                <input type="text">
+                <input type="text" id="subtopic3" name="subSujets[]" required>
             </div>
-            <button class="submit-button">submit</button>
+            <button class="submit-button" type="submit">submit</button>
         </div>
       
         </form>

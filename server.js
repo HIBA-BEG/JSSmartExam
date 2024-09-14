@@ -9,6 +9,8 @@ const authRoutes = require('./routes/AuthRoutes');
 const trainerRouter = require('./routes/trainerRouter');
 const studentRouter = require('./routes/studentRouter');
  
+
+
 app.use(session({
   secret: 'key',
   resave: false,
