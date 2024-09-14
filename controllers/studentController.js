@@ -27,6 +27,9 @@ exports.createForm = (req, res) => {
 
 
 exports.createStudent = (req, res) => {
+
+    const Tid = req.session.user.id_formateur;
+
   const newStudent = {
     prenom: req.body.prenom,
     dateNaissance: req.body.dateNaissance,

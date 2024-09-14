@@ -27,12 +27,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.locals.flash = req.flash(); // Pass flash messages to the view
-  next();
-});
-
-
 
 
 app.set('view engine', 'ejs');
