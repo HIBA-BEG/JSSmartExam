@@ -29,12 +29,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.locals.flash = req.flash();
-  next();
-});
-
-
 
 
 app.set('view engine', 'ejs');
