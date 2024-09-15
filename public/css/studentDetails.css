@@ -44,3 +44,11 @@ th {
     padding: 16px 5px;
     border-radius: 5px;
   }
+  @media (max-width: 568px) {
+    .container{
+    
+        margin-left:17%;
+      
+        
+    }
+  }
