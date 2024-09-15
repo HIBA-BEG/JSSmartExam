@@ -36,7 +36,7 @@ Cette application web permet aux formateurs de proposer et gérer des tests/exam
    cd votre-projet
 2.Installez les dépendances :
 
-    ```bash
+    
     npm install
 3.Créez un fichier .env à la racine du projet avec les variables suivantes:
 
