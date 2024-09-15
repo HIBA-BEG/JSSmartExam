@@ -40,19 +40,20 @@ Cette application web permet aux formateurs de proposer et gérer des tests/exam
     npm install
 3.Créez un fichier .env à la racine du projet avec les variables suivantes:
 
-    ```bash
+    
     DB_HOST=localhost
     DB_USER=root
     DB_PASSWORD=votre_mot_de_passe
     DB_NAME=gestion_tests
     PORT=3000
 4.Lancer l'application:
--4-1Lancez l'application en mode développement :
 
-    ```bash
+4-1Lancez l'application en mode développement :
+
+    
     npm run dev
--4-2Ou utilisez Docker pour un déploiement facile :
+4-2 Ou utilisez Docker pour un déploiement facile :
 
-    ```bash
+    
     docker-compose up --build
 
