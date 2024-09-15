@@ -109,3 +109,27 @@ text-decoration: none;
 color: white;
  }
 
+ @media (max-width: 568px) {
+   .container{
+      margin-left: 5%;
+      flex-wrap: nowrap;
+     
+  }
+  .manage-quiz-add h1{
+   text-align: left;
+   font-size: 20px;
+  line-height: 0px;
+  margin-left: 45px;
+  margin-top: 20px;
+  }
+  .quiz-container{
+   margin-left: 15%;
+   margin-top: 15%;
+   grid-template-columns: 1fr; 
+  }
+  .card-content{
+  margin-top: 5%;
+   
+   
+}
+ }
