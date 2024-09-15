@@ -148,7 +148,7 @@ exports.studentLogin = (req , res) => {
             studentId: user.id_etudiant,
             adress: user.adresse,
             birthDay: user.dateNaissance,
-            
+            dateInscription : user.dateinscription
         }
 
         // console.log(req.session.user);

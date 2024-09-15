@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/retakeQuiz.css">
-    <title>reatke quiz</title>
-</head>
-<body>
-    <%- include('layoutStudent') %>
-    <div class="container">
-        <div class="form-conatiner">
-            <div class="title-request">Request for retake quiz</div>
-            <div class="form">
-                <form action="">
-                    <label for="">chose quiz :</label>
-                    <select  name="" id="">
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                    </select>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/retakeQuiz.css">
+        <title>reatke quiz</title>
+    </head>
+    <body>
+        <%- include('layoutStudent') %>
+        <div class="container">
+            <div class="form-conatiner">
+                <div class="title-request">Request for retake quiz</div>
+                <div class="form">
+                    <form action="/STUDENT/student/submitRetakeRequest" method="POST">
 
-                    <label for="">reason :</label>
-                    <textarea name="" id=""></textarea>
+                        <label for>chose quiz :</label>
+                        <% if (requests && requests.length > 0) { %>
+                        <select name="testID" >
+                            <% requests.forEach((item) => { %>
+                            <option
+                                value="<%=item.id_test%>"><%=item.title%></option>
 
-                    <button>
-                        submit
-                    </button>
-                </form>
+                            <%})%>
+                        </select>
+                        
+                        <% } else { %>
+                        <select >
+                            <option value>no test availeble</option>
+                        </select>
+                        <% } %>
+
+                        <label for="description">reason :</label>
+                        <textarea name="description" id="description"></textarea>
+
+                        <button type="submit">
+                            submit
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

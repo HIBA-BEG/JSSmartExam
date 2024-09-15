@@ -164,3 +164,15 @@ justify-content: space-around;
         border-radius: 5px;
     }
 }
+.alert {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 90%;
+    z-index: 10;
+    background-color: rgb(159, 247, 159);
+    border: 0;
+    padding: 16px 5px;
+    border-radius: 5px;
+  }

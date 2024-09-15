@@ -9,6 +9,9 @@
 <body>
     <%- include('layoutStudent') %>
     <main class="container">
+        <div class="alert alert-success" id="flash-message">
+            <%- flash.success ? flash.success : '' %>
+        </div>
             <div class="hello-name">
                 <h1>Hello , <%= firstName%> <%= lastName %></h1>
             </div>
@@ -41,15 +44,25 @@
                     </div>
                  </div>
                  <div class="info-profile">
-                    <p><%= adress %></p>
-                    <p><%= email %></p>
-                    <p><%= birthDay %></p>
-                    <p>nbr des test passe</p>
+                    <p>adress:<%= adress %></p>
+                    <p>birthDay : <%= birthDay %></p>
+                    <p>inscription date :<%= dateInscription %></p>
+                    <p>Email :<%= email %></p>
                    
                  </div>
                 </div>
             </div>
 
     </main>
+    <script>
+        // Affichage du message flash
+   const flashMessage = document.getElementById('flash-message');
+   if (flashMessage.textContent.trim() !== '') {
+       flashMessage.style.display = 'block';
+       setTimeout(() => {
+           flashMessage.style.display = 'none';
+       }, 3000); 
+   }
+   </script>
 </body>
 </html>
