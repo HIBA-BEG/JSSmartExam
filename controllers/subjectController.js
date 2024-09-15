@@ -34,6 +34,7 @@ exports.redAllSubjects = async (req, res) => {
         res.status(500).json({ message: `An error occurred: ${error.message}` });
     }
 };
+
 exports.redSubjectById = async (id) => {
     try {
 
