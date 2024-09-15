@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/studentDetails.css">
-    <title>details</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/studentDetails.css">
+        <title>details</title>
+    </head>
+    <body>
 
-    <%- include('layoutStudent') %>
-    <div class="container">
-        <table>
-            <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-                <th>Header 3</th>
-                <th>Header 4</th>
-            </tr>
-            <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-            <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-            <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-        </table>
-    </div>
-</body>
+        <%- include('layoutStudent') %>
+        <div class="container">
+            <div class="alert alert-success" id="flash-message">
+                <%- flash.success ? flash.success : '' %>
+            </div>
+            <table>
+                <tr>
+                    <th>Quiz</th>
+                    <th>number of attempts</th>
+                    <th>final score</th>
+                    <th>success score</th>
+                </tr>
+                <% details.forEach((item) => { %>
+                <tr>
+                    <td><%=item.title%></td>
+                    <td><%=item.numero_essai%></td>
+                    <td><%=item.scoreEtudiant%></td>
+                    <td><%=item.successScore%></td>
+                </tr>
+                <% }); %>
+               
+            </table>
+        </div>
+        <script>
+         // Affichage du message flash
+    const flashMessage = document.getElementById('flash-message');
+    if (flashMessage.textContent.trim() !== '') {
+        flashMessage.style.display = 'block';
+        setTimeout(() => {
+            flashMessage.style.display = 'none';
+        }, 3000); 
+    }
+    </script>
+    </body>
 </html>

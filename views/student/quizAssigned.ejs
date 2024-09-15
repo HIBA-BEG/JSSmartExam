@@ -5,76 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/quizAssigned.css">
-  <title>quiz Assigned</title>
+  <title>Quiz Assigned</title>
+  
 </head>
 
 <body>
   <%- include('layoutStudent') %>
   <main class="container">
     <div class="manage-quiz-add">
-      <h1>  Quiz assigned to you</h1>
-      
+      <h1>Quiz assigned to you</h1>
     </div>
 
     <!-- container principal start -->
     <div class="quiz-container">
       <!-- principal carte start -->
+      <% if (tests && tests.length > 0) { %>
+        <% tests.forEach(test => { 
+          const currentDate = new Date();
+          const testDate = new Date(test.date_debut);
+          const isTestAvailable = testDate <= currentDate; 
+        %>
       <div class="card-content">
         <div class="image">
           <img src="/images/quizImage.jpg" alt="quiz imag">
         </div>
         <div class="content">
-          <p><span>Title : </span> javascript</p>
-          <p><span>Class :</span>JS perates</p>
-          <p><span>date : </span>11/9/2024 11:00</p>
-          <p><span>Success Score : </span>12/20</p>
+          <p><span>Title : </span> <%= test.title %></p>
+          <p><span>Class :</span> <%= test.nomclasse %></p>
+          <p><span>Date : </span> <%= test.date_debut %></p>
+          <p><span>Success Score : </span> <%= test.successScore %></p>
 
+          <% if (isTestAvailable) { %>
           <div class="take-button">
-                  <a href="/STUDENT/student/quizPage">Take the exam</a>
-          </div>
+              <a href="/STUDENT/student/quizPage/<%= test.id_test %>">Take the exam</a>
+            </div>
+            <% } else { %>
+              <div class="take-button2">
+              <a>Test not available</a>
+            </div>
+            <% } %>
+          
         </div>
-        
       </div>
+      <% }) %>
+      <% } else { %>
+        <p>No tests available</p>
+      <% } %>
       <!-- principal carte end -->
-      <div class="card-content">
-        <div class="image">
-          <img src="/images/quizImage.jpg" alt="quiz imag">
-        </div>
-        <div class="content">
-          <p><span>Title : </span> javascript</p>
-          <p><span>Class :</span>JS perates</p>
-          <p><span>date : </span>11/9/2024 11:00</p>
-          <p><span>Success Score : </span>12/20</p>
-
-          <div class="take-button">
-                  <a href="/student/quizPage">Take the exam</a>
-          </div>
-        </div>
-        
-      </div>
-      <div class="card-content">
-        <div class="image">
-          <img src="/images/quizImage.jpg" alt="quiz imag">
-        </div>
-        <div class="content">
-          <p><span>Title : </span> javascript</p>
-          <p><span>Class :</span>JS perates</p>
-          <p><span>date : </span>11/9/2024 11:00</p>
-          <p><span>Success Score : </span>12/20</p>
-
-          <div class="take-button">
-                  <a href="/student/quizPage">Take the exam</a>
-          </div>
-        </div>
-        
-      </div>
-
     </div>
-    <!--container principal end  -->
-
-
-
-
+    <!--container principal end-->
   </main>
 </body>
 
