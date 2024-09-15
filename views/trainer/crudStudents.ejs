@@ -12,8 +12,8 @@
 <body>
   <%- include('layout') %>
   <main class="studentscontainer">
-    <div class="alert alert-success" id="flash-message"></div>
-    <%- flash.success ? flash.success : '' %>
+    <div class="alert alert-success" id="flash-message">
+      <%- flash.success ? flash.success : '' %>
     </div>
     <div class="title mb-5">
       <h1>Manage students</h1>

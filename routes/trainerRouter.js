@@ -57,6 +57,7 @@ router.post('/updateStudent/:id', studentController.updateStudent);
 router.get("/AllRequests", (req, res) => {
   return res.render("trainer/testRequests");
 });
+
 // red all subject
 router.get("/subjectSubtopic", async (req, res) => {
   const subjects = await subjectController.redAllSubjects();
@@ -82,7 +83,7 @@ router.get("/editeSubjectSubtopicPage/:id", async (req, res) => {
 
 router.post("/addClass", classesController.addClass);
 
-router.post('/AddLevel' , levelController.createLevel);
+router.post('/AddLevel', levelController.createLevel);
 
 // add subject and subTopic
 router.post("/add-subject", subjectController.addSubject);

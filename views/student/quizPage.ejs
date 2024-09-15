@@ -4,59 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/quizPage.css">
-    <title>quiz</title>
+    <title>Quiz</title>
 </head>
 <body>
     <div class="container">
-        <h1>Development Skills Assessment</h1>
-        <form>
-            <div class="question">
-                <p>1 - Which programming language is used primarily for web development?</p>
-                <label class="option">
-                    <input type="radio" class="q1"  value="A"> A) Python
-                </label>
-                <label class="option">
-                    <input type="radio" class="q1"  value="B"> B) Java
-                </label>
-                <label class="option">
-                    <input type="radio" class="q1" value="C"> C) JavaScript
-                </label>
-                <label class="option">
-                    <input type="radio" class="q1"  value="D"> D) C++
-                </label>
-            </div>
+        <h1><%= exam[0].test_titre %></h1> <!-- Affiche le titre de l'examen en haut de la page -->
 
-            <div class="question">
-                <p>2 - What is a common version control system used by developers?</p>
+        <!-- Ajouter le champ caché pour envoyer le testId -->
+        <form action="/STUDENT/student/submit-quiz" method="POST">
+            <input type="hidden" name="testId" value="<%= exam[0].id_test %>">
+            
+        
+            <% let currentQuestion = ''; let questionNumber = 1; %>
+            <% exam.forEach((item) => { %>
+                <% if (item.texteQuestion !== currentQuestion) { %>
+                    <% if (currentQuestion !== '') { %></div><% } %>
+                    
+                    <!-- Début d'une nouvelle question -->
+                    <div class="question">
+                        <p><%= questionNumber++ %> - <%= item.texteQuestion %></p>
+                        <% currentQuestion = item.texteQuestion; %>
+                <% } %>
+        
+                <!-- Afficher les réponses sous forme de cases à cocher -->
                 <label class="option">
-                    <input type="radio"  value="A"> A) Git
+                    <input type="checkbox" id="q<%= item.id_question %>-<%= item.texteReponse %>" name="q<%= item.id_question %>[]"
+                        value="<%= item.texteReponse %>">
+                    <%= item.texteReponse %>
                 </label>
-                <label class="option">
-                    <input type="radio"  value="B"> B) SVN
-                </label>
-                <label class="option">
-                    <input type="radio"  value="C"> C) Mercurial
-                </label>
-            </div>
-
-            <div class="question">
-                <p>3 - What does HTML stand for?</p>
-                <label class="option">
-                    <input type="radio"  value="A"> A) HyperText Markup Language
-                </label>
-                <label class="option">
-                    <input type="radio"  value="B"> B) HighText Machine Language
-                </label>
-                <label class="option">
-                    <input type="radio"  value="C"> C) Home Tool Markup Language
-                </label>
-            </div>
+            <% }); %>
+            </div> <!-- Fermer le dernier div.question -->
+        
             <div class="btn">
-                <button type="submit">
-                    submit ansewrs
-                </button>
+                <button type="submit">Submit Answers</button>
             </div>
         </form>
+        
     </div>
 </body>
 </html>
