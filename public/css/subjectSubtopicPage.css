@@ -102,3 +102,40 @@ button{
     background-color: rgb(29, 189, 29);
 
 }
+ @media (max-width: 568px) {
+    form{
+        display: block;
+       
+    }
+    .subject-content{
+        width: 100%;
+        
+    }
+    .subtopic-content{
+        width: 100%;
+       
+    }
+    .subject-content p {
+        font-size: 50px;
+       
+    }
+    .subtopic-content p {
+        font-size: 40px;
+       
+    }
+    .back-button{
+    
+       
+        left: 5%;
+        bottom: -90%;
+       
+    }
+    .submit-button{
+    
+      
+        right: 5%;
+        bottom: -90%;
+        
+     
+    }
+ }
