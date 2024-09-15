@@ -46,9 +46,10 @@
         </svg>
       </a>
     </div>
-    <div class="student-list">
+
+    <dx iv class="student-list">
       <% students.forEach(student => { %>
-      <div class="student-item mb-4">
+      <div class="student-item mb-4" >
         <img src="../images/profileM.png" class="student-avatar">
         <span class="student-name"><%= student.nom %> <%= student.prenom %></span>
         <div class="student-actions">
@@ -150,8 +151,6 @@ function showPopup(popID) {
       overlay.remove();
     }
   }
-
-
   </script>
 </body>
 
