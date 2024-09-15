@@ -56,9 +56,11 @@ exports.Tables = [
       sujetID INT DEFAULT NULL,
       niveauID INT DEFAULT NULL,
       mediaID INT DEFAULT NULL,
+      id_test INT DEFAULT NULL,
       FOREIGN KEY (sujetID) REFERENCES sujets(id_sujet),
       FOREIGN KEY (niveauID) REFERENCES niveau(id_niveau),
-      FOREIGN KEY (mediaID) REFERENCES medias(id_media)
+      FOREIGN KEY (mediaID) REFERENCES medias(id_media),
+      FOREIGN KEY (id_test) REFERENCES tests(id_test)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;`,
   
     `CREATE TABLE IF NOT EXISTS reponses (
@@ -84,7 +86,7 @@ exports.Tables = [
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;`,
   
     `CREATE TABLE IF NOT EXISTS tests (
-      id_test INT PRIMARY KEY,
+      id_test INT INT AUTO_INCREMENT  PRIMARY KEY,
       date_debut DATETIME DEFAULT NULL,
       numero_essai INT DEFAULT NULL,
       successScore INT DEFAULT NULL,
@@ -103,5 +105,14 @@ exports.Tables = [
       dateNaissance DATE DEFAULT NULL,
       email VARCHAR(255) DEFAULT NULL,
       motdepasse VARCHAR(255) DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;`
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;`,
+
+    `CREATE TABLE IF NOT EXISTS etudiant_test (
+        id_etudiant_test INT AUTO_INCREMENT PRIMARY KEY,
+        idEtudiant INT DEFAULT NULL,
+        idTest INT  DEFAULT NULL,
+        FOREIGN KEY (idEtudiant) REFERENCES etudiants(id_etudiant),
+        FOREIGN KEY (idTest) REFERENCES tests(id_test)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;`,
+
   ];

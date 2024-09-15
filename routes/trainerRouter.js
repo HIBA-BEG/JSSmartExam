@@ -4,6 +4,8 @@ const { authmiddleware } = require('../helpers/middleware/AuthMiddleware');
 const classesController = require('../controllers/classesController');
 const studentController = require('../controllers/studentController');
 const levelController = require('../controllers/levelController');
+const level = require('../models/level');
+const subjects = require('../controllers/subjectController')
 
 const subjectController = require('../controllers/subjectController');
 
@@ -57,6 +59,30 @@ router.post('/updateStudent/:id', studentController.updateStudent);
 router.get("/AllRequests", (req, res) => {
   return res.render("trainer/testRequests");
 });
+
+
+
+router.get('/addQuestions', async (req, res) => {
+  try {
+
+    const subjectsList = await subjects.redAllSubjects();
+
+      const levelsList = await new Promise((resolve, reject) => {
+          level.getLevel((err, levels) => {
+              if (err) {
+                  return reject(err);
+              }
+              resolve(levels);
+          });
+      });
+
+      res.render('trainer/addTestQuestions', { levels: levelsList, subjects: subjectsList });
+  } catch (error) {
+      console.error('Error fetching levels or subjects:', error);
+      res.status(500).send('Internal Server Error');
+  }
+});
+
 
 // red all subject
 router.get("/subjectSubtopic", async (req, res) => {
