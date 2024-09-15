@@ -1,0 +1,52 @@
+
+
+body {
+    background-color: #faf1e4;
+    font-family: Itim;
+    font-size: 30px;
+  }
+  
+.header {
+    background-color: #435334;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .form-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #9CAB82;
+    border-radius: 8px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .answer-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .answer-group input {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+
+  .submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+  }
+
+  .add-answer-btn {
+    margin-top: 15px;
+  }
+
+  .remove-answer-btn {
+    background-color: #dc3545;
+    color: white;
+  }

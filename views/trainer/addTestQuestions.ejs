@@ -4,71 +4,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add students</title>
+  <title>Add Test Questions</title>
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/addStudent.css">
-</head>
+  <link rel="stylesheet" href="/css/addQuastion.css">
 </head>
 
 <body>
-  <div class="header">
-   
-   <form action="">
-
-<div>
-  
-</div>
-    <div class="form-row">
-
-
-      <div class="form-group">
-        <label for="firstName">Subject :</label>
-        <select id="subjectSelect" name="subject" class="form-control" required>
-          <option value="">Select a subject</option>
-          <% subjects.forEach(subject => { %>
-              <option value="<%= subject.id_sujet %>"><%= subject.title %></option>
-          <% }); %>
-      </select>      </div>
-
-
-      <div class="form-group">
-        <label for="dob">Level :</label>
-        <select id="levelSelect" name="level" class="form-control" required>
-          <option value="">Select a level</option>
-          <% levels.forEach(level => { %>
-            <option value="<%= level.id %>"><%= level.description %></option>
-          <% }); %>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="firstName">numbers of answers :</label>
-        <input type="text" id="prenom" name="prenom" required>
-      </div>
-
-      <div class="form-group">
-        <label for="dob">numbers of corecct answers :</label>
-        <input type="date" id="dateNaissance" name="dateNaissance" required>
-      </div>
+  <div class="container">
+    <div class="header">
+      <h2>Add Test Questions</h2>
     </div>
 
-   </form>
+    <div class="form-container">
+      <form action="/TRAINER/AddQuestions" method="POST">
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="subjectSelect">Subject:</label>
+            <select id="subjectSelect" name="subject" class="form-control" required>
+              <option value="">Select a subject</option>
+              <% subjects.forEach(subject => { %>
+              <option value="<%= subject.id_sujet %>"><%= subject.title %></option>
+              <% }); %>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="levelSelect">Level:</label>
+            <select id="level" name="level" class="form-control" required>
+              <option value="">Select a level</option>
+              <% levels.forEach(level => { %>
+              <option value="<%= level.id_niveau %>"><%= level.description %></option>
+              <% }); %>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="numberOfAnswers">Number of Answers:</label>
+            <input type="number" id="numberOfAnswers" name="numberOfAnswers" class="form-control" required>
+          </div>
+
+        <div class="form-group">
+          <label for="Question">Question:</label>
+          <input type="text" id="Question" name="Question" class="form-control" required>
+
+          <label for="point" class="mt-2">Point:</label>
+          <input type="number" id="point" name="point" class="form-control" required>
+        </div>
+
+
+        <div class="form-group">
+          <label for="answers">Answers:</label>
+          <div id="answers-container">
+            <!-- Answer fields will be dynamically added here -->
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+      </form>
+    </div>
   </div>
-  <div class="form-container">
-    <form action="/" method="POST" class="student-form">
-     
- 
-      <div class="form-group">
-        <label for="address">Address :</label>
-        <input type="text" id="adresse" name="adresse" required>
-      </div>
-      
-      <div class="buttons">
-        <a href="/TRAINER/AllStudents" class="back-btn">Back</a>
-        <button type="submit" class="submit-btn">Submit</button>
-      </div>
-    </form>
-  </div>
+
+  <script>
+    document.getElementById('numberOfAnswers').addEventListener('input', function () {
+      const numberOfAnswers = parseInt(this.value);
+      const answersContainer = document.getElementById('answers-container');
+
+      answersContainer.innerHTML = '';
+
+      for (let i = 1; i <= numberOfAnswers; i++) {
+        const answerGroup = document.createElement('div');
+        answerGroup.classList.add('answer-group', 'mb-2');
+
+        answerGroup.innerHTML = `
+          <input type="text" name="answers[]" placeholder="Answer ${i}" class="form-control mb-1" required>
+          <input type="checkbox" name="correctAnswer[]" value="${i}" class="ml-2"> Correct Answer
+        `;
+
+        answersContainer.appendChild(answerGroup);
+      }
+    });
+  </script>
 </body>
 
 </html>
