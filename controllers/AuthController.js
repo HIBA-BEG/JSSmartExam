@@ -19,6 +19,8 @@ if(error){
 
     const {FirstName , LastName ,  adress , birthDay , email , Password , specialty } = req.body;
 
+   
+
     bcrypt.hash(Password , 10 , (err , hashPassword)=>{
 
         if(err) throw err;
@@ -26,6 +28,7 @@ if(error){
         user.createUser(FirstName , LastName ,  adress , birthDay , email , hashPassword , (result)=>{
             const userId = result.insertId;
 
+           
 
             user.crateTrainer(specialty,userId,(result)=>{
 
@@ -59,27 +62,36 @@ exports.login = (req , res) => {
 
     const {email , Password} = req.body;
 
-    user.findTrainerByEmail(email , (user) => {
+    user.findTrainerByEmail(email , (userData) => {
 
-        if(!user){
+        if(!userData){
             return res.status(404).send('no match data');
         }
 
-        bcrypt.compare(Password , user.motdepasse , (err , isMatch)=>{
+        bcrypt.compare(Password , userData.motdepasse , (err , isMatch)=>{
 
             if(err) throw err;
             if(isMatch){
 
-                req.session.user = {
-                    id: user.id_utilisateur,
-                    firstName: user.nom,
-                    lastName: user.prenom,
-                    email: user.email,
-                    trinerId: user.id_formateur,
-                    specialty: user.specialite
-                    
-                }
-                res.redirect('/TRAINER/dashboard')
+
+                user.findTrainerClass(userData.id_formateur , (Tclass)=>{
+
+
+                    req.session.user = {
+                        id: userData.id_utilisateur,
+                        firstName: userData.nom,
+                        lastName: userData.prenom,
+                        email: userData.email,
+                        trinerId: userData.id_formateur,
+                        specialty: userData.specialite,
+                        className: Tclass.nomclasse,
+                        classId: Tclass.id_classe
+                        
+                    }
+                    res.redirect('/TRAINER/dashboard')
+                    // console.log(req.session.user)
+                })
+                           
             }else{
                 res.status(400).send('no match data')
             }
@@ -139,7 +151,7 @@ exports.studentLogin = (req , res) => {
             dateInscription : user.dateinscription
         }
 
-        console.log(req.session.user);
+        // console.log(req.session.user);
         res.redirect('/STUDENT/student/dashbord')
     })
 

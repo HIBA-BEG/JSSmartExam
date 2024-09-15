@@ -13,6 +13,7 @@
 <body>
   <div class="form-container">
     <form action="/TRAINER/updateStudent/<%= student.id_etudiant %>" method="POST" class="student-form">
+      <div class="form-row">
         <div class="form-group">
           <label for="firstName">First Name :</label>
           <input type="text" id="prenom" name="prenom" value="<%= student.prenom %>" required>
@@ -24,6 +25,7 @@
         </div>
 
       </div>
+
       <div class="form-row">
         <div class="form-group">
           <label for="lastName">Last Name :</label>
@@ -39,7 +41,7 @@
         <input type="text" id="adresse" name="adresse" value="<%= student.adresse %>" required>
       </div>
       <div class="buttons">
-        <button type="button" class="back-btn">Back</button>
+        <a href="/TRAINER/AllStudents" class="back-btn">Back</a>
         <button type="submit" class="submit-btn">Submit</button>
       </div>
     </form>

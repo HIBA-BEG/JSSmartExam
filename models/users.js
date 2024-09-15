@@ -54,7 +54,21 @@ const user = {
             if(err) throw err;
             callback(result[0]);
         });
+    },
+
+    findTrainerClass: ( id , callback) => {
+
+        const sql = `SELECT * FROM classes JOIN formateurs ON classes.formateurID = formateurs.id_formateur WHERE formateurs.id_formateur = ?`;
+        db.query(sql , [id] , (err , UClass)=>{
+
+            if(err) throw err;
+            callback(UClass[0]);
+
+        });
+
     }
+
+    
 
 
 

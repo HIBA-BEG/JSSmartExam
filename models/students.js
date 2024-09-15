@@ -23,7 +23,7 @@ const Etudiant = {
 
   createStudent: (studentData, callback) => {
 
-    const { nom, prenom, email, dateNaissance, adresse } = studentData;
+    const { nom, prenom, email, dateNaissance, adresse , classeID } = studentData;
 
     const query1 = `INSERT INTO utilisateurs (nom, prenom, email, dateNaissance, adresse) 
                       VALUES (?, ?, ?, ?, ?)`;
@@ -36,9 +36,9 @@ const Etudiant = {
 
         const utilisateurID = result.insertId;
 
-        const query2 = `INSERT INTO etudiants (utilisateurID, dateinscription) 
-                        VALUES (?, CURRENT_TIMESTAMP)`;
-        db.query(query2, [utilisateurID], callback);
+        const query2 = `INSERT INTO etudiants (utilisateurID, classeID, dateinscription) 
+                        VALUES (?,?, CURRENT_TIMESTAMP)`;
+        db.query(query2, [utilisateurID , classeID ], callback);
       }
     );
   },

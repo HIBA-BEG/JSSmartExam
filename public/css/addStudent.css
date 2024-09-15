@@ -120,6 +120,7 @@ input[type="email"]:focus {
 
 .back-btn {
   background-color: #eee;
+  color: black;
 }
 
 .submit-btn {
