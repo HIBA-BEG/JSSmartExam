@@ -327,14 +327,14 @@ form {
   }
 
   .studentscontainer {
-    width: 100%;
-    margin: 0;
+    width: 80%;
+    margin-left: 20%;
     padding: 10px;
   }
 
   .title h1 {
-    font-size: 40px;
-    line-height: 90px;
+    font-size: 30px;
+    line-height: 40px;
   }
 
   .actions {

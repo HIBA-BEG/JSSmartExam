@@ -176,3 +176,43 @@ justify-content: space-around;
     padding: 16px 5px;
     border-radius: 5px;
   }
+  @media (max-width: 568px) {
+    .container{
+        margin-left: 20%;
+       
+    }
+    .statistique{
+        width: 100%;
+        height: 100vh;
+       
+    }
+    .hello-name h1{
+    
+         font-size: 30px;
+         font-weight: 300;
+        line-height: 60px;
+     
+     }
+     
+    .student-info{
+        width: 90%;
+        border-radius: 5px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+       justify-content: flex-start;
+        align-items: center
+ 
+    }
+    .student-info{
+       
+       
+        height: 100vh;
+        
+    }
+    .info-profile{
+      
+        height: 60%;
+      
+    }
+  }

@@ -82,4 +82,20 @@ button{
 button:hover {
     background-color: #b5dd70;
 }
+@media (max-width: 568px) {
+    .form-conatiner{
+        width: 75%;
+        height: 80%;
+        margin-left: 50px;
+       
+    }
+    .title-request{
+        font-size: xX-large;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+        
+        
+    }
+}
 
