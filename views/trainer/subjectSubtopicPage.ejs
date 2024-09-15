@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/subjectSubtopicPage.css">
-  <title>add Subject</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/subjectSubtopicPage.css">
+        <title>add Subject</title>
+    </head>
 
-<body>
-    <main class="container">
-        <form action="/trainer/add-subject" method="POST">
-        <div class="subject-content">
-            <div class="add-word">
-                <p>Add subject</p>
-            </div>
-            <div class="input">
-                <label for="">subject name:</label>
-                <input type="text" id="subject" name="title" required>
-                <!-- just pour insert le id de formateur -->
-                
-            </div>
-            <button class="back-button">back</button>
-        </div>
-        <div class="subtopic-content">
-            <div class="add-word">
-                <p>Add subTopic</p>
-            </div>
-            <div class="input-subtopic">
-                <label for="">first:</label>
-                <input type="text" id="subtopic1" name="subSujets[]" required>
-                <label for="">second:</label>
-                <input type="text" id="subtopic2" name="subSujets[]" required>
-                <label for="">third:</label>
-                <input type="text" id="subtopic3" name="subSujets[]" required>
-            </div>
-            <button class="submit-button" type="submit">submit</button>
-        </div>
-      
-        </form>
+    <body>
+        <main class="container">
+            <form action="/trainer/add-subject" method="POST">
+                <div class="subject-content">
+                    <div class="add-word">
+                        <p>Add subject</p>
+                    </div>
+                    <div class="input">
+                        <label for>subject name:</label>
+                        <input type="text" id="subject" name="title" required>
+                        <!-- just pour insert le id de formateur -->
 
-    </main>
-</body>
+                    </div>
+                    <a href="/TRAINER/subjectSubtopic">
+                        <button class="back-button">back</button>
+                    </a>
+                </div>
+                <div class="subtopic-content">
+                    <div class="add-word">
+                        <p>Add subTopic</p>
+                    </div>
+                    <div class="input-subtopic">
+                        <label for>first:</label>
+                        <input type="text" id="subtopic1" name="subSujets[]"
+                            required>
+                        <label for>second:</label>
+                        <input type="text" id="subtopic2" name="subSujets[]"
+                            required>
+                        <label for>third:</label>
+                        <input type="text" id="subtopic3" name="subSujets[]"
+                            required>
+                    </div>
+                    <button class="submit-button" type="submit">submit</button>
+                </div>
+
+            </form>
+
+        </main>
+    </body>
 </html>

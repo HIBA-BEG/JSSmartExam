@@ -149,3 +149,29 @@
    padding: 16px 5px;
    border-radius: 5px;
  }
+ 
+ 
+ @media (max-width: 568px) {
+   .container{
+      margin-left: 8%;
+      flex-wrap: nowrap;
+     
+  }
+  .manage-quiz-add h1{
+   text-align: left;
+   font-size: 20px;
+  line-height: 0px;
+  margin-left: 50px;
+  margin-top: 20px;
+  }
+  .quiz-container{
+   margin-left: 15%;
+   margin-top: 15%;
+   grid-template-columns: 1fr; 
+  }
+  .card-content{
+  margin-top: 5%;
+   
+   
+}
+ }
