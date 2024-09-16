@@ -41,6 +41,18 @@ module.exports = {
             console.error('Error get all sujet:', err);
         }
     },
+
+    AllSubject: (callback) => {
+        db.query('SELECT * FROM sujets', (err, rows) => {
+          if (err) {
+            console.error('Error getting all subjects:', err);
+            return callback(err, null);  // Send the error back to the callback
+          }
+          callback(null, rows);  // Success: send rows to the callback
+        });
+      },
+
+
     redSubjectById: async (id) => {
         try {
             const result = await db

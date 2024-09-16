@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add students</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/addStudent.css">
+</head>
+</head>
+
+<body>
+  <div class="form-container">
+    <form action="/TRAINER/addOneQuiz" method="POST" class="student-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="title">Title :</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="successScore">Success Score:</label>
+          <input type="text" id="successScore" name="successScore" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="lastName">Subject:</label>
+          <select id="subject" name="sujetID" required>
+            <% subjects.forEach(function(subject) { %>
+            <option value="<%= subject.id_sujet %>"><%= subject.title %></option>
+            <% }); %>
+          </select>
+        </div>
+        <!-- <div class="form-group">
+          <label for="subTopic">Sub Topic:</label>
+          <select id="subTopic" name="subTopicID" required>
+
+          </select>
+        </div> -->
+      </div>
+      <div class="buttons">
+        <a href="/TRAINER/addOneQuiz" class="back-btn">Back</a>
+        <button type="submit" class="submit-btn">Next</button>
+      </div>
+    </form>
+  </div>
+  <!-- <script>
+    // JavaScript to populate subTopics based on selected subject
+    document.getElementById('subject').addEventListener('change', function() {
+        const subjectId = this.value;
+        fetch(`/TRAINER/getSubTopics/${subjectId}`)
+            .then(response => response.json())
+            .then(data => {
+                const subTopicSelect = document.getElementById('subTopic');
+                subTopicSelect.innerHTML = '';
+                data.forEach(subTopic => {
+                    const option = document.createElement('option');
+                    option.value = subTopic.id_subsujet;
+                    option.textContent = subTopic.title;
+                    subTopicSelect.appendChild(option);
+                });
+            });
+    });
+</script> -->
+</body>
+
+</html>

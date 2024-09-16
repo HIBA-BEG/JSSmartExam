@@ -75,7 +75,7 @@ exports.login = (req , res) => {
 
 
                 user.findTrainerClass(userData.id_formateur , (Tclass)=>{
-
+                    
 
                     req.session.user = {
                         id: userData.id_utilisateur,

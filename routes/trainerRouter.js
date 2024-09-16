@@ -4,6 +4,7 @@ const { authmiddleware } = require('../helpers/middleware/AuthMiddleware');
 const classesController = require('../controllers/classesController');
 const studentController = require('../controllers/studentController');
 const levelController = require('../controllers/levelController');
+const quizController = require('../controllers/quizController');
 
 const subjectController = require('../controllers/subjectController');
 
@@ -23,9 +24,6 @@ router.get("/dashboard", (req, res) => {
 
   return res.render("trainer/dashboard", { firstName, lastName, email, specialty });
 
-});
-router.get("/manage-quiz", (req, res) => {
-  return res.render("trainer/manageQuiz");
 });
 
 // router.get("/AllStudents", (req, res) => {
@@ -87,5 +85,16 @@ router.post('/AddLevel' , levelController.createLevel);
 // add subject and subTopic
 router.post("/add-subject", subjectController.addSubject);
 
+
+
+// router.get("/manage-quiz", (req, res) => {
+//   return res.render("trainer/manageQuiz");
+// });
+
+router.get('/manage-quiz', quizController.allQuizzes);
+router.get('/addOneQuiz', quizController.createQuizForm);
+router.post('/addOneQuiz', quizController.createQuiz);
+
+router.get('/deleteQuiz/:id', quizController.deleteQuiz);
 
 module.exports = router;

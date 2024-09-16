@@ -1,12 +1,22 @@
 const Student = require("../models/students.js");
 
+// exports.allStudents = (req, res) => {
+//   Student.getAll((err, students) => {
+//     if (err) throw err;
+//     res.render("trainer/crudStudents", { students });
+//   });
+// };
+
 exports.allStudents = (req, res) => {
-  Student.getAll((err, students) => {
-    if (err) throw err;
+  const trainerClassId = req.session.user.classId;
+  Student.getAllByClass(trainerClassId, (err, students) => {
+    if (err) {
+      console.error("Error fetching students:", err);
+      return res.status(500).send("Error fetching students");
+    }
     res.render("trainer/crudStudents", { students });
   });
 };
-
 
 
 exports.deleteEtudiant = (req, res) => {
@@ -43,7 +53,6 @@ exports.createStudent = (req, res) => {
   });
 };
 
-// Display form for updating student
 exports.updateForm = (req, res) => {
     const id = req.params.id;
     Student.getById(id, (err, student) => {
@@ -54,7 +63,6 @@ exports.updateForm = (req, res) => {
   };
 
   
-  // Update student details
 exports.updateStudent = (req, res) => {
     const id = req.params.id;
     const updatedStudent = {
@@ -69,3 +77,7 @@ exports.updateStudent = (req, res) => {
       res.redirect('/TRAINER/AllStudents ');
     });
   };
+
+
+
+  
